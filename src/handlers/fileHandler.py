@@ -1,3 +1,5 @@
+import os
+
 def readFile(filePath):
     try:
         with open(filePath, 'r', encoding='utf-8') as file:
@@ -30,7 +32,8 @@ def readCandidates(filePath):
                 
 
     except FileNotFoundError:
-        print(f"\nArquivo de candidatos não encontrado: {filePath}. Certifique-se de salvar o arquivo com o número de 'candidatos.txt' dentro da pasta data")
+        normalizedPath = os.path.normpath(filePath)
+        print(f"\nArquivo de candidatos não encontrado: {normalizedPath}. Certifique-se de salvar o arquivo com o número de 'candidatos.txt' dentro da pasta data")
     except Exception as e:
         print(f"\nErro inesperado: {e}")
     
@@ -84,7 +87,8 @@ def readPoll(filePath):
                         listOfVotes.append(vote)
 
     except FileNotFoundError:
-        print(f"Arquivo de urna não encontrado: {filePath}")
+        normalizedPath = os.path.normpath(filePath)
+        print(f"Arquivo de urna não encontrado: {normalizedPath}")
     except Exception as e:
         print(f"Erro inesperado: {e}")
 
