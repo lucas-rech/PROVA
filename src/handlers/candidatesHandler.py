@@ -6,7 +6,6 @@ candidates_path = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'c
 
 
 def listCandidates():
-    print('\n\n\n')
     file.readFile(candidates_path)
 
 def insertCandidatesFromFile():
@@ -21,13 +20,9 @@ def insertCandidatesFromFile():
     
 
 def printCandidatesList(data_list):
-    print('\n\n')
     for candidate in data_list:
         code, name = candidate
     
         print(f"CANDIDATO: {name} - {code}")
-    
-    print('\n\n')
-    print('='*50)
 
 
