@@ -1,10 +1,17 @@
 # Sistema de Apuração de Votos
 
-Este projeto foi desenvolvido como parte de um trabalho final, cujo objetivo é criar um sistema de apuração de votos de uma eleição. O sistema foi feito em Python e é responsável por contabilizar os votos dos eleitores, apresentar boletins parciais durante a apuração e gerar um relatório final com os resultados da eleição.
+Este projeto foi desenvolvido como parte de um trabalho final para o componente curricular de Programação I do Instituto Federal do Rio Grande do Sul, campus Vacaria. 
+
+O objetivo é criar um sistema de apuração de votos de uma eleição. O sistema foi feito em Python e é responsável por contabilizar os votos dos eleitores, apresentar boletins parciais durante a apuração e gerar um relatório final com os resultados da eleição. Todo o sistema funciona via terminal de comando.
+
+*O sistema não utiliza de orientação a objetos.
+
 
 ## Descrição do Sistema
 
 O sistema realiza a leitura de arquivos de texto contendo informações sobre candidatos e urnas. Durante o processo de apuração, o sistema calcula o total de votos válidos, nulos, brancos, e computa os votos para cada candidato, atualizando em tempo real quem está liderando a eleição. Ao final da apuração, o sistema exibe um boletim final com os resultados, incluindo o número de votos por candidato, a porcentagem de votos e a informação se o candidato foi **ELEITO** ou **NÃO ELEITO**.
+
+
 
 ## Funcionalidades
 
@@ -69,3 +76,77 @@ O sistema realiza a leitura de arquivos de texto contendo informações sobre ca
     ```bash
     python main.py
 
+## Exemplo de dados nos repositórios
+Os dados da aplicação são armazenados em vetores que servem como banco de dados. Esses vetores estão centralizados dentro da pasta **repositories**.
+
+Claro! Aqui está o texto formatado em markdown:
+
+### Candidatos
+Quando um arquivo é lido e armazenado com sucesso nessa lista, ele ficará com a seguinte estrutura:
+
+```python
+data = [
+    # i1= cód. do candidato
+    # i2 = nome do candidato
+    [123456, 'JOSÉ ARIVALDO'],
+    [234567, 'MARIA SANTOS'],
+    [345678, 'JOÃO SILVA'],
+    [456789, 'ANA PEREIRA'],
+    [567890, 'CARLOS LIMA'],
+    [678901, 'BEATRIZ SOUZA'],
+    [789012, 'FERNANDO ALMEIDA'],
+    [890123, 'LUCIA OLIVEIRA'],
+    [901234, 'PEDRO COSTA'],
+    [123456, 'PAULO GOMES']
+]
+```
+
+
+### Urnas
+A lista de urnas é um pouco mais complexa e como possui uma maior quantidade de dados sensíveis e imutáveis, utilizamos de tuplas. Sua estrutura é a seguinte:
+
+```python
+data = [
+    (
+        # índice 0 da tupla: identificação da urna
+        [
+            # i0= código da urna / i1= nome da urna
+            ('001', 'ESCOLA CENÁRIO DA PAZ')
+        ],
+        # índice 01 da tupla: registro de voto
+        [
+            # i0= data / i1= horário / i2= identificador do eleitor / i3= cód. do candidato (pode ser nulo ou em branco)
+            ('24/11/2023', '20:00:00', '1098765432', 58391),
+            ('24/11/2023', '20:00:40', '1087654321', 65984),
+            ('24/11/2023', '20:01:20', '1076543210', 29531),
+            ('24/11/2023', '20:02:00', '1065432109', 38172),
+            ('24/11/2023', '20:02:40', '1054321098', 47203),
+            ('24/11/2023', '20:03:20', '1043210987', 58391),
+            ('24/11/2023', '20:04:00', '1032109876', 65984),
+            ('24/11/2023', '20:04:40', '1021098765', 72185),
+            ('24/11/2023', '20:05:20', '1010987654', 81346),
+            ('24/11/2023', '20:06:00', '1009876543', 90427),
+            ('24/11/2023', '20:06:40', '1098765432', 58391),
+            # ...
+        ],
+        # índice 2: votos em branco
+        # índice 3: nulos
+        # índice 4: computados
+        # índice 5: válidos
+        5, 2, 50, 43
+    ),
+    (
+        [('002', 'ESCOLA PADRE PACÍFICO')],
+        [
+            ('24/11/2023', '20:04:00', '1032109876', 65984),
+            ('24/11/2023', '20:04:40', '1021098765', 72185),
+            ('24/11/2023', '20:05:20', '1010987654', 81346),
+            ('24/11/2023', '20:06:00', '1009876543', 90427),
+            ('24/11/2023', '20:06:40', '1098765432', 58391),
+            #...
+        ],
+        5, 2, 50, 43
+    ),
+    # mais tuplas de urnas...
+]
+```
