@@ -1,0 +1,1 @@
+A pasta "data" deve ser colocada no caminho: C:\Users\[USER]\AppData\Local\Temp\

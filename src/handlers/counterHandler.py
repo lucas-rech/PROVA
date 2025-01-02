@@ -30,7 +30,7 @@ def carryCount():
     totalOfVotes, totalOfValid, totalOfNull, totalOfBlank = 0, 0, 0, 0
 
     # caso os repositórios de candidatos OU de urnas estejam vazios, não irá realizar a apuração
-    if len(polls.polls_list) or len(candidates.candidates_list) < 1:
+    if len(polls.polls_list) < 1 or len(candidates.candidates_list) < 1:
         return print("Não há dados suficientes para realizar a apuração.")
 
     #faz a contagem dos totais de votos
