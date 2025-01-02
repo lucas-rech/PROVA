@@ -81,7 +81,6 @@ O projeto foi buildado e dentro da pasta **dist** existe um executável do proje
 ## Exemplo de dados nos repositórios
 Os dados da aplicação são armazenados em vetores que servem como banco de dados. Esses vetores estão centralizados dentro da pasta **repositories**.
 
-Claro! Aqui está o texto formatado em markdown:
 
 ### Candidatos
 Quando um arquivo é lido e armazenado com sucesso nessa lista, ele ficará com a seguinte estrutura:
