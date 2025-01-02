@@ -64,6 +64,8 @@ O sistema realiza a leitura de arquivos de texto contendo informações sobre ca
 
 ## Como Rodar o Projeto
 
+O projeto foi buildado e dentro da pasta **dist** existe um executável do projeto, mas caso prefira, você pode clonar o projeto desse repositório e executá-lo em seu ambiente.
+
 1. Clone o repositório:
    ```bash
    git clone https://github.com/lucasrech/contador-de-votos.git
@@ -91,7 +93,6 @@ data = [
     [123456, 'JOSÉ ARIVALDO'],
     [234567, 'MARIA SANTOS'],
     [345678, 'JOÃO SILVA'],
-    [456789, 'ANA PEREIRA'],
     [567890, 'CARLOS LIMA'],
     [678901, 'BEATRIZ SOUZA'],
     [789012, 'FERNANDO ALMEIDA'],
